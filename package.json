@@ -1,0 +1,27 @@
+{
+  "name": "geo-saas",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run start:dev -w @geo-saas/api",
+    "dev:api:datasheet:file": "MYSQL_OPTIONAL=true DATASHEET_STORE_DRIVER=file npm run start:dev -w @geo-saas/api",
+    "start:api:datasheet:file": "MYSQL_OPTIONAL=true DATASHEET_STORE_DRIVER=file npm run start:prod -w @geo-saas/api",
+    "dev:web": "npm run dev -w @geo-saas/web",
+    "dev:web-next": "npm run dev -w @geo-saas/web-next",
+    "apitable:install": "cd vendor/apitable-official && corepack pnpm install",
+    "apitable:build:room": "cd vendor/apitable-official && corepack pnpm --filter @apitable/i18n-lang build && corepack pnpm --filter @apitable/core build-cjs && corepack pnpm --filter @apitable/room-server build",
+    "apitable:start:room": "cd vendor/apitable-official && corepack pnpm start:prod:room-server",
+    "apitable:dev:room": "cd vendor/apitable-official && corepack pnpm start:room-server",
+    "build": "npm run build -w @geo-saas/api && npm run build -w @geo-saas/web",
+    "build:web-next": "npm run build -w @geo-saas/web-next",
+    "prepare:affine-web": "node ops/prepare-affine-web-dist.mjs",
+    "media:download-icons": "node ops/download-media-icons.mjs",
+    "check:web-next-production-baseline": "node ops/check-web-next-production-baseline.mjs",
+    "check:web-next-browser-api-boundary": "node ops/check-web-next-browser-api-boundary.mjs",
+    "check:web-next-production-env": "node ops/check-web-next-production-env.mjs",
+    "write:web-next-release-metadata": "node ops/write-web-next-release-metadata.mjs"
+  }
+}
