@@ -1,6 +1,6 @@
 # MiaoShe Chat 生图与 Copilot 编排子系统
 
-本仓库包含 MiaoShe Chat 的图片生成工作流，以及为该工作流提供编排能力的 Codex/Copilot 子系统源码。
+本仓库包含 MiaoShe Chat 的图片生成工作流，以及为该工作流提供编排能力的Copilot 子系统源码。
 
 ## 已支持的能力
 
